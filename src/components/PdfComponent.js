@@ -17,6 +17,7 @@ function PdfComponent() {
   const file = useSelector(state => state.file)
   const about = useSelector(state => state.about)
   const experienceList = useSelector(state => state.experienceList)
+  const projectList = useSelector(state => state.projectList)
   const educationList = useSelector(state => state.educationList)
   const skills = useSelector(state => state.skills)
 
@@ -27,6 +28,7 @@ function PdfComponent() {
       file:file,
       about:about,
       experienceList:experienceList,
+      projectList:projectList,
       educationList:educationList,
       skills:skills
     }
@@ -54,15 +56,15 @@ function PdfComponent() {
   const GetIcon = (icon) => {
     switch(icon.icon){
         case "HiOutlineMail":
-          return <HiOutlineMail size={30}/>
+          return <HiOutlineMail size={25}/>
         case "HiPhone":
-          return <HiPhone size={30}/>
+          return <HiPhone size={25}/>
         case "BsLinkedin":
-          return <BsLinkedin size={30}/>
+          return <BsLinkedin size={25}/>
         case "BsGithub":
-          return <BsGithub size={30}/>
+          return <BsGithub size={25}/>
         case "BsGlobe":
-          return <BsGlobe size={30}/>
+          return <BsGlobe size={25}/>
         default:
           return "●"
     }
@@ -103,7 +105,7 @@ function PdfComponent() {
     return(
       list.map((item,id)=>{
         return(
-          <div className={id%2===0 ? "d-flex aligh-items-start align-items-center bg-2 text-white p-3" : "d-flex aligh-items-start align-items-center bg-3 text-white p-3"} key={id}>
+          <div className={id%2===0 ? "d-flex aligh-items-start align-items-center bg-2 p-3" : "d-flex aligh-items-start align-items-center bg-3 p-3"} key={id}>
             <p className="m-0"><GetIcon icon={item.icon}/></p><span className="mx-2"></span><p className="m-0">{item.link}</p>
           </div>
         )
@@ -130,7 +132,7 @@ function PdfComponent() {
 
               <Stack className="text-center">
                 <span className="font-bold m-0 firstname">{name[0]}</span>
-                <span className="font-thin m-0">{name[1]}</span>
+                <span className="font-bold m-0">{name[1]}</span>
                 <p>{profile.tagline}</p>
                   <p className="m-0"><HiOfficeBuilding size={20}/> {profile.position}</p>
                   <p><HiLocationMarker size={20}/> {profile.location}</p>
@@ -175,6 +177,27 @@ function PdfComponent() {
                         <div className="px-3">
                           <h4>{item.title}</h4>
                           <p className="m-0">{item.company} • {item.startMonth} {item.startYear} {`${item.isWorking ? " - Present" : " - "+item.endMonth+" "+item.endYear }`}</p>
+                          <p className="m-0">{item.location}</p>
+                          <p>{item.description}</p>
+                        </div>
+                      </div>
+                    )
+                  })
+                }
+                
+                <hr></hr>
+              </div>
+
+              <div className="px-4">
+                <h4 className="title">Project</h4>
+                {
+                  projectList.map((item,id)=>{
+                    return(
+                      <div className="d-flex justify-content-start py-1" key={id}>
+                        <HiOfficeBuilding size={30}/>
+                        <div className="px-3">
+                          <h4>{item.title}</h4>
+                          <p className="m-0">{item.technologyStack} • {item.startMonth} {item.startYear} {`${item.isWorking ? " - Present" : " - "+item.endMonth+" "+item.endYear }`}</p>
                           <p className="m-0">{item.location}</p>
                           <p>{item.description}</p>
                         </div>

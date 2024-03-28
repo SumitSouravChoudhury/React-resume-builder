@@ -1,12 +1,12 @@
-const experienceReducer = (list = [], action) => {
+const projectReducer = (list = [], action) => {
   switch (action.type) {
-    case "ADD_EXPERIENCE":
+    case "ADD_PROJECT":
       return [...list, action.payload];
-    case "EDIT_EXPERIENCE":
+    case "EDIT_PROJECT":
       let newArr = [...list];
       newArr[action.payload.id] = action.payload;
       return newArr;
-    case "REMOVE_EXPERIENCE":
+    case "REMOVE_PROJECT":
       let arr = [...list];
       arr.splice(action.payload, 1);
       return arr;
@@ -14,4 +14,4 @@ const experienceReducer = (list = [], action) => {
       return list;
   }
 };
-export default experienceReducer;
+export default projectReducer;

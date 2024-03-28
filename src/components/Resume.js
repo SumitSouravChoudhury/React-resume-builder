@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Profile from './Profile';
 import About from './About';
 import Experience from './Experience';
+import Project from './Project';
 import Education from './Education';
 import Skills from './Skills';
 import { NavLink } from 'react-router-dom';
@@ -19,6 +20,8 @@ function Resume() {
         <About></About>
 
         <Experience></Experience>
+
+        <Project></Project>
 
         <Education></Education>
 

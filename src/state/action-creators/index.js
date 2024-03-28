@@ -69,6 +69,32 @@ export const removeExperience = (index) => {
     }
 }
 
+export const addProject = (form) => {
+    return (dispatch) => {
+        dispatch({
+            type: "ADD_PROJECT",
+            payload: form
+        })
+    }
+}
+export const editProject = (form) => {
+    return (dispatch) => {
+        dispatch({
+            type: "EDIT_PROJECT",
+            payload: form
+        })
+    }
+}
+
+export const removeProject = (index) => {
+    return (dispatch) => {
+        dispatch({
+            type: "REMOVE_PROJECT",
+            payload: index
+        })
+    }
+}
+
 export const addEducation = (form) => {
     return (dispatch) => {
         dispatch({

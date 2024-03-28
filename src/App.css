@@ -88,11 +88,11 @@ body {
 
 
 .font-bold{
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 900;
 }
 .font-thin {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 100;
 }
 .firstname{
@@ -102,15 +102,16 @@ body {
 .title{
   font-weight: 600;
   letter-spacing: 1px;
+  font-size: 1.4rem !important;
 }
 .bg-1 {
   background-color: antiquewhite;
 }
 .bg-2 {
-  background-color: rgb(49, 49, 49);
+  background-color: antiquewhite;
 }
 .bg-3 {
-  background-color: rgb(77, 77, 77);
+  background-color: antiquewhite;
 }
 .pdf{
   width: 210mm;
@@ -123,4 +124,9 @@ body {
   object-fit: cover;
   border-radius: 50%;
 }
+
+h4 {
+  font-size: 1.2rem !important;
+}
+
 
